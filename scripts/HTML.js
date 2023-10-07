@@ -47,21 +47,32 @@ const createDisplay = () => {
   const display = buildElement("div", {
     id: "display",
   });
+  const previous = buildElement("div", {
+    id: "previous-operand",
+  });
+  previous.setAttribute("data", "previous-operand");
+  const current = buildElement("div", {
+    id: "current-operand",
+  });
+  current.setAttribute("data", "current-operand");
+  display.append(previous, current);
   return display;
 };
 
 const createButtons = () => {
-  const nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
   const ops = ["+", "−", "×", "÷"];
-  const funcs = ["CLEAR", "DEL"];
-  const [posNeg, equals, decimal] = ["±", "=", "."];
+  const [clear, del, equals] = ["CLEAR", "DEL", "="];
+  const smiley = "🤪";
   const buttons = [];
-  nums.forEach((num) => buttons.push(createButton("num", num)));
-  ops.forEach((op) => buttons.push(createButton("op", op)));
-  funcs.forEach((func) => buttons.push(createButton("func", func)));
-  buttons.push(createButton("posneg", posNeg));
-  buttons.push(createButton("equals", equals));
-  buttons.push(createButton("decimal", decimal));
+  nums.forEach((num) => buttons.push(createButton("number", num)));
+  ops.forEach((op) => buttons.push(createButton("operation", op)));
+  buttons.push(
+    createButton("clear", clear),
+    createButton("delete", del),
+    createButton("equals", equals),
+    createButton("smiley", smiley)
+  );
   return buttons;
 };
 
@@ -71,6 +82,7 @@ const createButton = (type, char) => {
     className: `btn ${type}-btn`,
     textContent: char,
   });
+  button.setAttribute("data", type);
   return button;
 };
 

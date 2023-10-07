@@ -1,9 +1,11 @@
 import { htmlSetup } from "./scripts/HTML.js";
-import { listenerSetup } from "./scripts/Listeners.js";
+import { calculatorSetup } from "./scripts/Calculator.js";
+import { setUpModal } from "./scripts/Modal.js";
 
 const GO = () => {
   htmlSetup();
-  listenerSetup();
+  setUpModal();
+  calculatorSetup();
 };
 
 GO();

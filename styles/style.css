@@ -1,44 +1,60 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 #main-container {
-    align-items: center;
-    /*
+  align-items: center;
+  /*
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,176,242,1) 0%, rgba(198,232,238,1) 100%);
     */
-    background-color: darkslategray;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    min-width: 100vw;
+  background-color: darkslategray;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .container {
-    align-items: center;
-    display: grid;
-    justify-items: center;
+  align-items: center;
+  display: grid;
+  justify-items: center;
 }
 
 #calculator {
-    background-image: url(https://img.freepik.com/premium-vector/cute-heart-pattern-background_35322-816.jpg);
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: 1fr 3fr;
-    height: 70vh;
-    width: 70vw;
+  background-image: url(https://img.freepik.com/premium-vector/cute-heart-pattern-background_35322-816.jpg);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  height: 70vh;
+  width: 70vw;
 }
 
 #display {
-    background-color: lightgray;
-    border-radius: 10px;
-    height: 70%;
-    width: 90%;
+  align-items: flex-end;
+  background-color: lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: space-around;
+  padding: 10px;
+  width: 90%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+#previous-operand {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+}
+
+#current-operand {
+  font-size: 2.5rem;
 }
 
 #button-container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
